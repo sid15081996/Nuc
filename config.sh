@@ -14,9 +14,6 @@ echo "root:P@ss" | chpasswd
 cd /home || exit
 mv "$firstname" "$firstdotname"
 
-# Change ownership of user's directory
-cd /home || exit
-chown "$firstdotname":users "$firstdotname"
 
 # Change permissions of first.name directory
 chmod 700 "$firstdotname"
@@ -31,6 +28,10 @@ sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd
 
 # Replace firstname with first.name in passwd and shadow
 sed -i "s/$firstname/$firstdotname/g" /etc/passwd /etc/shadow
+
+# Change ownership of user's directory
+cd /home || exit
+chown "$firstdotname":users "$firstdotname"
 
 # Mask sleep.target
 systemctl mask sleep.target
