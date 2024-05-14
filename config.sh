@@ -15,6 +15,7 @@ cd /home || exit
 mv "$firstname" "$firstdotname"
 
 # Change ownership of user's directory
+cd /home || exit
 chown "$firstdotname":users "$firstdotname"
 
 # Change permissions of first.name directory
