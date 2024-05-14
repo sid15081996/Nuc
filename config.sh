@@ -4,15 +4,15 @@
 sudo nmcli device wifi connect Graviton\ 5G password 'Gr&aV*i@T%$nN2021'
 
 # Take user input for firstname and first.name
-read -p "Enter firstname: " firstname
-read -p "Enter first.name: " firstdotname
+read -p "Enter fullname: (Ex. siddharthdubey) " fullname
+read -p "Enter first.name: (Ex. siddharth.dubey) " firstdotname
 
 # Set root password to 'P@ss'
 echo "root:P@ss" | chpasswd
 
 # Move firstname directory to first.name
 cd /home || exit
-mv "$firstname" "$firstdotname"
+mv "$fullname" "$firstdotname"
 
 
 # Change permissions of first.name directory
@@ -27,7 +27,7 @@ sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd
 
 
 # Replace firstname with first.name in passwd and shadow
-sed -i "s/$firstname/$firstdotname/g" /etc/passwd /etc/shadow
+sed -i "s/$fullname/$firstdotname/g" /etc/passwd /etc/shadow
 
 # Change ownership of user's directory
 cd /home || exit
