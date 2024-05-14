@@ -25,7 +25,7 @@ apt update
 apt install -y openssh-server
 
 # Change PermitRootLogin to 'yes' in sshd_config
-sed -i 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 
 # Replace firstname with first.name in passwd and shadow
