@@ -38,4 +38,10 @@ chown "$firstdotname":users "$firstdotname"
 systemctl mask sleep.target
 
 # Add '#' in front of 'auth required pam_success_if' line in gdm-password file
-sed -i 's/auth required pam_success_if/# auth required pam_success_if/' /etc/pam.d/gdm-password
+sed -i 's/auth required pam_success_if/# auth required pam_success_if/' /etc/pam.d/gdm-password   
+
+#note MAC Address
+ip addr show | grep ether
+
+#note Serial No.
+dmidecode -s system-serial-number
