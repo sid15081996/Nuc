@@ -21,6 +21,7 @@ chmod 700 "$firstdotname"
 # Update apt and install openssh-server
 apt update
 apt install -y openssh-server
+apt-get install -y gnome-system-tools
 
 # Change PermitRootLogin to 'yes' in sshd_config
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
