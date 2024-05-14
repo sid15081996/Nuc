@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #add wifi
-sudo nmcli device wifi connect Graviton\ 5G password 'Gr&aV*i@T%$nN2021'
+sudo nmcli device wifi connect Graviton\ 5G password 'r&aV*i@T%$n'
 
 # Take user input for firstname and first.name
 read -p "Enter fullname: (Ex. siddharthdubey) " fullname
